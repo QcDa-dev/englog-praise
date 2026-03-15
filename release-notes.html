@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>リリースノート - EngLog & Praise</title>
+    <title>リリースノート</title>
     <link rel="stylesheet" href="common.css">
     <style>
         .release-item { border-bottom: 1px solid var(--border-color); padding-bottom: 15px; margin-bottom: 15px; }
@@ -19,7 +19,9 @@
 
     <script src="common.js"></script>
     <script>
-        // ※ ご自身のGitHubユーザー名とリポジトリ名に書き換えてください
+        // ==================================================
+        // ↓↓ ご自身のリポジトリ情報に書き換えてください ↓↓
+        // ==================================================
         const repoOwner = "YOUR_GITHUB_USER";
         const repoName = "YOUR_REPO_NAME";
         
@@ -45,7 +47,7 @@
                 });
             })
             .catch(err => {
-                document.getElementById('releases-container').innerHTML = '<p>リリースノートの取得に失敗しました。リポジトリ設定をご確認ください。</p>';
+                document.getElementById('releases-container').innerHTML = '<p>リリースノートの取得に失敗しました。</p>';
                 console.error(err);
             });
     </script>
