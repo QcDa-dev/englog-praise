@@ -99,6 +99,36 @@ header {
 @keyframes typing { 0%, 80%, 100% { transform: scale(0); } 40% { transform: scale(1); } }
 
 /* =========================================
+   フォーム開閉トグル (追加)
+========================================= */
+.form-toggle-bar {
+    background-color: #f1f1f1;
+    color: var(--text-light);
+    text-align: center;
+    padding: 8px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    border-top: 1px solid var(--border-color);
+    user-select: none;
+    transition: background-color 0.2s;
+}
+.form-toggle-bar:hover {
+    background-color: #e2e2e2;
+}
+.chat-input-area {
+    transition: max-height 0.3s ease, padding 0.3s ease, opacity 0.3s ease;
+    overflow: hidden;
+    max-height: 500px; /* フォームが収まる十分な高さ */
+}
+.chat-input-area.hidden {
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    opacity: 0;
+    border-top: none;
+}
+
+/* =========================================
    履歴・その他画面用
 ========================================= */
 main.general-main { flex: 1; max-width: 800px; margin: 0 auto; padding: 20px; width: 100%; box-sizing: border-box; }
