@@ -23,7 +23,7 @@ document.getElementById('log-form').addEventListener('submit', async (e) => {
     // =========================================================
     // ↓↓ ここにGASでデプロイして取得した「ウェブアプリのURL」を貼り付けます ↓↓
     // =========================================================
-    const endpoint = "https://script.google.com/macros/s/YOUR_GAS_WEB_APP_URL/exec";
+    const endpoint = "https://script.google.com/macros/s/AKfycbzyJfvO-WFlQC-30inNmGr--vKxBMgT5fKIFw2KegGx7-febALgbA0H_u3bOQ0snDXT/exec";
 
     try {
         // GASのCORS制約を回避するため、text/plainで送信します
