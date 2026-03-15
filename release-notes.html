@@ -12,7 +12,7 @@
     </style>
 </head>
 <body>
-    <main>
+    <main class="general-main">
         <h2>リリースノート</h2>
         <div id="releases-container">読み込み中...</div>
     </main>
@@ -22,8 +22,8 @@
         // ==================================================
         // ↓↓ ご自身のリポジトリ情報に書き換えてください ↓↓
         // ==================================================
-        const repoOwner = "QcDa-dev";
-        const repoName = "englog-praise";
+        const repoOwner = "YOUR_GITHUB_USER";
+        const repoName = "YOUR_REPO_NAME";
         
         fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/releases`)
             .then(res => res.json())
@@ -48,7 +48,6 @@
             })
             .catch(err => {
                 document.getElementById('releases-container').innerHTML = '<p>リリースノートの取得に失敗しました。</p>';
-                console.error(err);
             });
     </script>
 </body>
