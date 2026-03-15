@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>リリースノート - EngLog & Praise</title>
+    <link rel="stylesheet" href="common.css">
+    <style>
+        .release-item { border-bottom: 1px solid var(--border-color); padding-bottom: 15px; margin-bottom: 15px; }
+        .release-tag { display: inline-block; background-color: var(--primary-color); color: white; padding: 3px 8px; border-radius: 3px; font-size: 0.8rem; margin-right: 10px; }
+        .release-date { color: var(--text-light); font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+    <main>
+        <h2>リリースノート</h2>
+        <div id="releases-container">読み込み中...</div>
+    </main>
+
+    <script src="common.js"></script>
+    <script>
+        // ※ ご自身のGitHubユーザー名とリポジトリ名に書き換えてください
+        const repoOwner = "YOUR_GITHUB_USER";
+        const repoName = "YOUR_REPO_NAME";
+        
+        fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/releases`)
+            .then(res => res.json())
+            .then(data => {
+                const container = document.getElementById('releases-container');
+                container.innerHTML = '';
+                if(data.length === 0) {
+                    container.innerHTML = '<p>リリースノートはまだありません。</p>';
+                    return;
+                }
+                data.forEach(release => {
+                    const date = new Date(release.published_at).toLocaleDateString('ja-JP');
+                    const bodyHtml = release.body ? release.body.replace(/\n/g, '<br>') : '更新内容の記載はありません。';
+                    container.innerHTML += `
+                        <div class="release-item">
+                            <h3><span class="release-tag">${release.tag_name}</span>${release.name}</h3>
+                            <p class="release-date">公開日: ${date}</p>
+                            <p>${bodyHtml}</p>
+                        </div>
+                    `;
+                });
+            })
+            .catch(err => {
+                document.getElementById('releases-container').innerHTML = '<p>リリースノートの取得に失敗しました。リポジトリ設定をご確認ください。</p>';
+                console.error(err);
+            });
+    </script>
+</body>
+</html>
