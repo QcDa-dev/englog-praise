@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+/* ベーススタイル */
 :root {
     --primary-color: #4A90E2;
     --accent-color: #F39C12;
@@ -45,6 +46,7 @@ header {
     cursor: pointer;
 }
 
+/* ハンバーガーメニューボタン */
 .hamburger-btn {
     background: none;
     border: none;
@@ -70,7 +72,9 @@ header {
     flex-direction: column;
 }
 
-.slide-menu.open { right: 0; }
+.slide-menu.open {
+    right: 0;
+}
 
 .close-btn {
     align-self: flex-end;
@@ -81,14 +85,51 @@ header {
     margin-bottom: 20px;
 }
 
-.slide-menu ul { list-style: none; padding: 0; margin: 0; }
-.slide-menu li { margin-bottom: 15px; }
-.slide-menu a { text-decoration: none; color: var(--text-color); font-weight: bold; display: block; }
-.menu-divider { border: 0; border-top: 1px solid var(--border-color); margin: 15px 0; }
-.spacer { height: 1em; }
-.sub-links { padding-left: 1.5em; margin-top: 10px; }
-.sub-links a { font-weight: normal; font-size: 0.9rem; color: var(--text-light); margin-bottom: 8px; }
-.version-text { margin-top: auto; text-align: right; font-size: 0.8rem; color: #CCCCCC; }
+.slide-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.slide-menu li {
+    margin-bottom: 15px;
+}
+
+.slide-menu a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+    display: block;
+}
+
+.menu-divider {
+    border: 0;
+    border-top: 1px solid var(--border-color);
+    margin: 15px 0;
+}
+
+.spacer {
+    height: 1em; /* 1行空け用 */
+}
+
+.sub-links {
+    padding-left: 1.5em; /* 1段落下げ */
+    margin-top: 10px;
+}
+
+.sub-links a {
+    font-weight: normal;
+    font-size: 0.9rem;
+    color: var(--text-light); /* 少し薄い文字 */
+    margin-bottom: 8px;
+}
+
+.version-text {
+    margin-top: auto; /* 一番下に配置 */
+    text-align: right;
+    font-size: 0.8rem;
+    color: #CCCCCC; /* 薄字テキスト */
+}
 
 /* メインコンテンツ */
 main {
@@ -108,5 +149,13 @@ footer {
     padding: 20px;
     font-size: 0.8rem;
 }
-.footer-links { margin-top: 10px; }
-.footer-links a { color: #AAAAAA; text-decoration: none; margin: 0 10px; }
+
+.footer-links {
+    margin-top: 10px;
+}
+
+.footer-links a {
+    color: #AAAAAA;
+    text-decoration: none;
+    margin: 0 10px;
+}
