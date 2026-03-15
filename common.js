@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const version = "ver 1.2.0";
+    const version = "ver 1.3.0";
 
     const headerHtml = `
         <div class="header-inner">
