@@ -1,0 +1,112 @@
+@charset "UTF-8";
+
+:root {
+    --primary-color: #4A90E2;
+    --accent-color: #F39C12;
+    --bg-color: #F8F9FA;
+    --text-color: #333333;
+    --text-light: #888888;
+    --border-color: #DDDDDD;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ヘッダー */
+header {
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.app-title {
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+.hamburger-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+/* スライドメニュー */
+.slide-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background-color: #FFFFFF;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+    transition: right 0.3s ease;
+    z-index: 1000;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.slide-menu.open { right: 0; }
+
+.close-btn {
+    align-self: flex-end;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.slide-menu ul { list-style: none; padding: 0; margin: 0; }
+.slide-menu li { margin-bottom: 15px; }
+.slide-menu a { text-decoration: none; color: var(--text-color); font-weight: bold; display: block; }
+.menu-divider { border: 0; border-top: 1px solid var(--border-color); margin: 15px 0; }
+.spacer { height: 1em; }
+.sub-links { padding-left: 1.5em; margin-top: 10px; }
+.sub-links a { font-weight: normal; font-size: 0.9rem; color: var(--text-light); margin-bottom: 8px; }
+.version-text { margin-top: auto; text-align: right; font-size: 0.8rem; color: #CCCCCC; }
+
+/* メインコンテンツ */
+main {
+    flex: 1;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* フッター */
+footer {
+    background-color: #333333;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.8rem;
+}
+.footer-links { margin-top: 10px; }
+.footer-links a { color: #AAAAAA; text-decoration: none; margin: 0 10px; }
