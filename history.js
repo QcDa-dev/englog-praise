@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     // =========================================================
     // ↓↓ app.jsと同じ「GASのウェブアプリURL」を貼り付けてください
     // =========================================================
-    const GAS_ENDPOINT = "https://script.google.com/macros/s/YOUR_GAS_WEB_APP_URL/exec";
+    const GAS_ENDPOINT = "https://script.google.com/macros/s/AKfycbzyJfvO-WFlQC-30inNmGr--vKxBMgT5fKIFw2KegGx7-febALgbA0H_u3bOQ0snDXT/exec";
     
     const container = document.getElementById("history-container");
 
