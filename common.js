@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <ul>
             <li><a href="guide.html" target="_blank">使い方ガイド</a></li>
             <li><a href="history.html">これまでの記録</a></li>
-            <li><a href="https://forms.gle/YOUR_FORM_URL" target="_blank">お問い合わせ</a></li>
+            <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdlvIr5ehyy3dInl_XTkA5F64H7yFIigL2dzFW0IoXnl8ajdw/viewform?usp=dialog" target="_blank">お問い合わせ</a></li>
             <li><a href="release-notes.html" target="_blank">リリースノート</a></li>
         </ul>
         <hr class="menu-divider">
