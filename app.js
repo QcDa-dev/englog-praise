@@ -181,3 +181,27 @@ function appendMessage(sender, htmlContent, timeStr = null, save = true) {
 function scrollToBottom() {
     timeline.scrollTop = timeline.scrollHeight;
 }
+
+const clearChatBtn = document.getElementById('clear-chat-btn');
+if (clearChatBtn) {
+    clearChatBtn.addEventListener('click', () => {
+        // 誤操作防止の確認ダイアログ
+        if (confirm('画面上のチャット履歴をリセットしますか？\n（※裏側のスプレッドシートに保存された過去のデータは消えません）')) {
+            // 1. ローカルストレージを削除
+            localStorage.removeItem(LOCAL_STORAGE_KEY);
+            
+            // 2. タイムラインを初期状態（システム挨拶のみ）に戻す
+            timeline.innerHTML = `
+                <div class="chat-message ai">
+                    <div class="message-content">
+                        こんにちは！今日の英語学習エンタメ記録を教えてください！どんな小さなことでも全力で褒めちぎります✨
+                    </div>
+                    <div class="message-time">System</div>
+                </div>
+            `;
+            
+            // 3. タイピングインジケーターを戻しておく
+            timeline.appendChild(typingIndicator);
+        }
+    });
+}
