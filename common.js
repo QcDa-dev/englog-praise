@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const version = "ver 1.0.0"; // GAS版初期リリース
+    const version = "ver 1.2.0";
 
-    // 1. ヘッダーの生成
     const headerHtml = `
         <div class="header-inner">
             <h1 class="app-title" id="nav-title">EngLog & Praise</h1>
@@ -12,11 +11,11 @@ document.addEventListener("DOMContentLoaded", () => {
     headerElement.innerHTML = headerHtml;
     document.body.prepend(headerElement);
 
-    // 2. ハンバーガーメニューの生成
     const menuHtml = `
         <button class="close-btn" id="close-btn">×</button>
         <ul>
             <li><a href="guide.html" target="_blank">使い方ガイド</a></li>
+            <li><a href="history.html">これまでの記録</a></li>
             <li><a href="https://forms.gle/YOUR_FORM_URL" target="_blank">お問い合わせ</a></li>
             <li><a href="release-notes.html" target="_blank">リリースノート</a></li>
         </ul>
@@ -35,9 +34,8 @@ document.addEventListener("DOMContentLoaded", () => {
     navElement.innerHTML = menuHtml;
     document.body.appendChild(navElement);
 
-    // 3. フッターの生成
     const footerHtml = `
-        <p>&copy; 2026 QcDa Project. All Rights Reserved.</p>
+        <p>&copy; 2025 QcDa Project. All Rights Reserved.</p>
         <div class="footer-links">
             <a href="https://qcda-dev.github.io/HP/terms-of-service.html" target="_blank">利用規約</a>
             <a href="https://qcda-dev.github.io/HP/community-guidelines.html" target="_blank">コミュニティガイドライン</a>
@@ -47,9 +45,8 @@ document.addEventListener("DOMContentLoaded", () => {
     footerElement.innerHTML = footerHtml;
     document.body.appendChild(footerElement);
 
-    // 4. イベントリスナーの設定
     document.getElementById("nav-title").addEventListener("click", () => {
-        window.location.href = "index.html"; // タイトルクリックでトップへ
+        window.location.href = "index.html"; 
     });
 
     const menu = document.getElementById("slide-menu");
