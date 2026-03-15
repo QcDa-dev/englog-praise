@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>これまでの記録 - EngLog & Praise</title>
+    <link rel="stylesheet" href="common.css">
+    <style>
+        .loading-text { text-align: center; color: var(--primary-color); font-weight: bold; margin-top: 30px; }
+    </style>
+</head>
+<body>
+    <main class="general-main">
+        <h2>これまでの学習ログ</h2>
+        <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 20px;">※スプレッドシートに記録されたデータを新しい順に表示しています。</p>
+        
+        <div id="history-container">
+            <div class="loading-text">データを読み込んでいます...</div>
+        </div>
+    </main>
+
+    <script src="common.js"></script>
+    <script src="history.js"></script>
+</body>
+</html>
